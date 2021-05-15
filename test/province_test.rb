@@ -68,5 +68,13 @@ class ProvinceTest < Minitest::Test
 
       _(asia.shortfall).must_equal(-25)
     end
+
+    it 'calculates the correct profit' do
+      asia = Province.new(sample_province_data)
+
+      asia.demand = 0
+
+      _(asia.profit).must_equal(0)
+    end
   end
 end

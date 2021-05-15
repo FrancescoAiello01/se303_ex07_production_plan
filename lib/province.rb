@@ -1,7 +1,6 @@
 require_relative 'producer'
 
 class Province
-
   attr_reader :name
   attr_accessor :total_production, :demand, :price
 
@@ -49,5 +48,4 @@ class Province
   def satisfied_demand
     [@demand, @total_production].min
   end
-
 end

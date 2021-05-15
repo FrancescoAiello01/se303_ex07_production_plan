@@ -1,5 +1,4 @@
 class Producer
-
   attr_reader :name, :production
   attr_accessor :cost
 
@@ -15,5 +14,4 @@ class Producer
     @province.total_production += new_production - @production
     @production = new_production
   end
-
 end

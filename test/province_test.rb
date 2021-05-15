@@ -48,5 +48,15 @@ class ProvinceTest < Minitest::Test
 
       _(no_producers.shortfall).must_equal 30
     end
+    it 'calculates the correct profit' do
+      no_producers = Province.new({
+                                    name: 'No producers',
+                                    producers: [],
+                                    demand: 30,
+                                    price: 20
+                                  })
+
+      _(no_producers.profit).must_equal 0
+    end
   end
 end

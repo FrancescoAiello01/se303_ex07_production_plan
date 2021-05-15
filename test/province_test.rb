@@ -36,4 +36,17 @@ class ProvinceTest < Minitest::Test
       _(asia.profit).must_equal 292
     end
   end
+
+  describe 'when there are no producers' do
+    it 'calculates the correct shortfall' do
+      no_producers = Province.new({
+                                    name: 'No producers',
+                                    producers: [],
+                                    demand: 30,
+                                    price: 20
+                                  })
+
+      _(no_producers.shortfall).must_equal 30
+    end
+  end
 end

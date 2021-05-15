@@ -5,9 +5,11 @@ require_relative '../lib/province'
 require_relative '../lib/data'
 
 class ProvinceTest < Minitest::Test
+  describe 'province test case' do
+    it 'calculates the correct shortfall' do
+      asia = Province.new(sample_province_data)
 
-  def test_province_shortfall
-    asia = Province.new(sample_province_data)
-    assert_equal(5, asia.shortfall)
+      _(asia.shortfall).must_equal 5
+    end
   end
 end

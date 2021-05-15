@@ -59,4 +59,14 @@ class ProvinceTest < Minitest::Test
       _(no_producers.profit).must_equal 0
     end
   end
+
+  describe 'when there is no demand' do
+    it 'calculates the correct shortfall' do
+      asia = Province.new(sample_province_data)
+
+      asia.demand = 0
+
+      _(asia.shortfall).must_equal(-25)
+    end
+  end
 end

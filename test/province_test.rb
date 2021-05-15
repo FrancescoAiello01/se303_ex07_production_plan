@@ -18,4 +18,14 @@ class ProvinceTest < Minitest::Test
       _(asia.profit).must_equal 230
     end
   end
+
+  describe 'when production is changed' do
+    it 'calculates the correct shortfall' do
+      asia = Province.new(sample_province_data)
+
+      asia.producers.first.production = 20
+
+      _(asia.shortfall).must_equal(-6)
+    end
+  end
 end
